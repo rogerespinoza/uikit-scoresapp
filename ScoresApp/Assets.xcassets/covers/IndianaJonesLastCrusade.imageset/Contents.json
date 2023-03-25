@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "IndianaJonesLastCrusade.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "IndianaJonesLastCrusade@2x.jpg",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "IndianaJonesLastCrusade@3x.jpg",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
