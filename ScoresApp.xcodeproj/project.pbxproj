@@ -20,6 +20,7 @@
 		329D7B1C29FF15CD008B6E0B /* MainOld.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 329D7B1A29FF15CD008B6E0B /* MainOld.storyboard */; };
 		329D7B1E29FF76DA008B6E0B /* DiffableScoreTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D7B1D29FF76DA008B6E0B /* DiffableScoreTableVC.swift */; };
 		329D7B2229FF77A6008B6E0B /* ZeldaScoreNewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D7B2129FF77A6008B6E0B /* ZeldaScoreNewCell.swift */; };
+		32A62DE72A005A5700E250B7 /* ScoresDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A62DE62A005A5700E250B7 /* ScoresDiffableDataSource.swift */; };
 		32EAC20129BFAA5100C01191 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EAC20029BFAA5100C01191 /* AppDelegate.swift */; };
 		32EAC20329BFAA5100C01191 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EAC20229BFAA5100C01191 /* SceneDelegate.swift */; };
 		32EAC20829BFAA5100C01191 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32EAC20629BFAA5100C01191 /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		329D7B1B29FF15CD008B6E0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ScoresApp/Base.lproj/MainOld.storyboard; sourceTree = "<group>"; };
 		329D7B1D29FF76DA008B6E0B /* DiffableScoreTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableScoreTableVC.swift; sourceTree = "<group>"; };
 		329D7B2129FF77A6008B6E0B /* ZeldaScoreNewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeldaScoreNewCell.swift; sourceTree = "<group>"; };
+		32A62DE62A005A5700E250B7 /* ScoresDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresDiffableDataSource.swift; sourceTree = "<group>"; };
 		32EAC1FD29BFAA5100C01191 /* ScoresApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoresApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32EAC20029BFAA5100C01191 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32EAC20229BFAA5100C01191 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,12 +84,13 @@
 			name = Logic;
 			sourceTree = "<group>";
 		};
-		329D7B2329FF77B7008B6E0B /* New Controller */ = {
+		329D7B2329FF77B7008B6E0B /* New Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				329D7B1D29FF76DA008B6E0B /* DiffableScoreTableVC.swift */,
+				32A62DE62A005A5700E250B7 /* ScoresDiffableDataSource.swift */,
 			);
-			name = "New Controller";
+			name = "New Controllers";
 			sourceTree = "<group>";
 		};
 		329D7B2429FF77DD008B6E0B /* Cells */ = {
@@ -119,7 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				329D7B2429FF77DD008B6E0B /* Cells */,
-				329D7B2329FF77B7008B6E0B /* New Controller */,
+				329D7B2329FF77B7008B6E0B /* New Controllers */,
 				32EAC21829BFAB0C00C01191 /* View */,
 				32EAC21729BFAAE300C01191 /* Controller */,
 				3277C60B29C7CB9600D28A87 /* Logic */,
@@ -269,6 +272,7 @@
 				32FE580229FDE77C0088368E /* ZeldaViewCell.swift in Sources */,
 				325A41CD29C6480800C2CBE2 /* Extensions.swift in Sources */,
 				325F60BA29C42066000D9F65 /* ModelPersistence.swift in Sources */,
+				32A62DE72A005A5700E250B7 /* ScoresDiffableDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

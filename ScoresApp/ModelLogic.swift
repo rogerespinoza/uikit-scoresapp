@@ -12,6 +12,20 @@ final class ModelLogic {
     static let shared = ModelLogic()
     let persistence = ModelPersistence.shared
     
+    var snapshot:NSDiffableDataSourceSnapshot<String, Score> {
+        var snapshot = NSDiffableDataSourceSnapshot<String, Score>()
+        snapshot.appendSections(composers)
+        for composer in composers {
+            let scores = filteredScores.filter { score in
+                score.composer == composer
+            }.sorted { s1, s2 in
+                s1.title < s2.title
+            }
+            snapshot.appendItems(scores, toSection: composer)
+        }
+        return snapshot
+    }
+    
     private var scores: [Score] {
         didSet {
             try? persistence.saveScores(scores: scores)
