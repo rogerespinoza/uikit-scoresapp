@@ -25,7 +25,6 @@ extension String {
     }
 }
 
-
 extension UIImage {
     func resizeImage(width: CGFloat ) -> UIImage? {
         let scale:CGFloat = width / size.width
@@ -42,4 +41,8 @@ extension UIImage {
         UIGraphicsEndImageContext()
         return newImage
     }
+}
+
+extension Notification.Name {
+    static let favoritesChange = Notification.Name("FAVCHANGES")
 }

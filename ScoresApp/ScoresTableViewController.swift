@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ScoresTableViewController: UITableViewController {
+class ScoresTableViewController: UITableViewController, UISearchResultsUpdating {
     
     let modelLogic = ModelLogic.shared
     let viewLogic = ViewLogic.shared
@@ -21,6 +21,13 @@ class ScoresTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.leftBarButtonItem = self.editButtonItem
         magnitude = view.window?.windowScene?.screen.nativeScale ?? 1.0
+        
+        let searchController = viewLogic.getSearchBar()
+        searchController.searchResultsUpdater = self
+        navigationItem.searchController = searchController
+        
+//        navigationItem.hidesSearchBarWhenScrolling = false
+        tableView.contentOffset = CGPoint(x: 0, y: 4)
     }
 
     // MARK: - Table view data source
@@ -43,12 +50,6 @@ class ScoresTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-
-    
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-        modelLogic.moveScore(indexPath: fromIndexPath, to: to)
-    }
-
     
     /*
     // Override to support conditional rearranging of the table view.
@@ -57,6 +58,24 @@ class ScoresTableViewController: UITableViewController {
         return true
     }
     */
+    
+    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+        modelLogic.moveScore(indexPath: fromIndexPath, to: to)
+    }
+
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let score = modelLogic.getScoreRow(indexPath: indexPath)
+        let isFavorite = {
+            modelLogic.isFavorite(score:score)
+        }()
+        let action = UIContextualAction(style: isFavorite ? .destructive : .normal, title: "Favorited") { [self]_,_, handler in
+            modelLogic.toogleFavorite(score:score)
+            handler(true)
+        }
+        action.image = UIImage(systemName: isFavorite ? "star" : "star.fill")
+        action.backgroundColor = isFavorite ? .red : .blue
+        return UISwipeActionsConfiguration(actions: [action])
+    }
 
     // MARK: - Navigation
 
@@ -77,5 +96,12 @@ class ScoresTableViewController: UITableViewController {
         let indexPath = IndexPath(row: index, section: 0)
         tableView.reloadRows(at: [indexPath], with: .none)
     }
-
+    
+    //MARK: - Search
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let search = searchController.searchBar.text else { return }
+        modelLogic.search = search
+        tableView.reloadData()
+    }
 }

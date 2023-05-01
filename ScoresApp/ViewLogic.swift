@@ -50,7 +50,7 @@ final class ViewLogic {
         if provider.canLoadObject(ofClass: UIImage.self) {
             provider.loadObject(ofClass: UIImage.self) { item, error in
                 guard error == nil,
-                        let image = item as? UIImage,
+                      let image = item as? UIImage,
                       let resized = image.resizeImage(width: 100 * magnitude) else { return }
 //                let with:CGFloat = 300
 //                let scale:CGFloat = with / image.size.width
@@ -93,5 +93,12 @@ final class ViewLogic {
         } else {
             return UIImage(named: score.cover)
         }
+    }
+    
+    func getSearchBar() -> UISearchController {
+        let search = UISearchController(searchResultsController: nil)
+        search.searchBar.placeholder = "Enter a score name"
+        search.obscuresBackgroundDuringPresentation = false
+        return search
     }
 }

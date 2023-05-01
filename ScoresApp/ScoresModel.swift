@@ -18,6 +18,10 @@ struct Score: Codable, Hashable {
     let tracks: [String]
 }
 
+struct Favorite:Codable {
+    let id:Int
+}
+
 extension Score {
     var yearString:String {
         "\(year.formatted(.number.precision(.integerLength(4))))"

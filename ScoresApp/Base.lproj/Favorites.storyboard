@@ -9,39 +9,57 @@
     </dependencies>
     <scenes>
         <!--Favorites-->
-        <scene sceneID="K2h-i3-d4d">
+        <scene sceneID="iP8-An-XwL">
             <objects>
-                <collectionViewController id="gmA-1U-yVI" customClass="FavoritesViewController" customModule="ScoresApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="1Gc-eV-d1c">
+                <collectionViewController id="kCO-LX-9Im" customClass="FavoritesViewController" customModule="ScoresApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="JiP-Cg-2K3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pI0-hQ-c9c">
-                            <size key="itemSize" width="128" height="128"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" sectionInsetReference="safeArea" id="WBY-TX-p3g">
+                            <size key="itemSize" width="116" height="116"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="zelda" id="Shm-Ms-Ocy">
-                                <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="zelda" id="8bl-dS-eS6" customClass="ZeldaViewCell" customModule="ScoresApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="116" height="116"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gKH-D5-h50">
-                                    <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="X75-rr-gzg">
+                                    <rect key="frame" x="0.0" y="0.0" width="116" height="116"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Eoc-bN-ZiU">
+                                            <rect key="frame" x="8" y="8" width="100" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="OLI-QZ-csO"/>
+                                                <constraint firstAttribute="width" constant="100" id="WCE-Ri-37e"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Eoc-bN-ZiU" secondAttribute="trailing" constant="8" id="Kdy-LR-DSW"/>
+                                        <constraint firstItem="Eoc-bN-ZiU" firstAttribute="top" secondItem="X75-rr-gzg" secondAttribute="top" constant="8" id="MzA-eb-5cr"/>
+                                        <constraint firstItem="Eoc-bN-ZiU" firstAttribute="leading" secondItem="X75-rr-gzg" secondAttribute="leading" constant="8" id="NLZ-Od-dVg"/>
+                                        <constraint firstAttribute="bottom" secondItem="Eoc-bN-ZiU" secondAttribute="bottom" constant="8" id="f3Y-zB-cC6"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="cover" destination="Eoc-bN-ZiU" id="7nc-gY-34J"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
-                            <outlet property="dataSource" destination="gmA-1U-yVI" id="BT0-jQ-oVm"/>
-                            <outlet property="delegate" destination="gmA-1U-yVI" id="vJC-KY-pYA"/>
+                            <outlet property="dataSource" destination="kCO-LX-9Im" id="KeW-S6-iP7"/>
+                            <outlet property="delegate" destination="kCO-LX-9Im" id="ikp-4q-fbJ"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Favorites" id="e8Z-Pi-qWz"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="hvI-jh-r38"/>
                 </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YHb-kT-oef" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Whp-Pa-SJL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1738" y="660"/>
+            <point key="canvasLocation" x="1826.7175572519084" y="659.85915492957747"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TCy-hG-HgH">
@@ -55,7 +73,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="gmA-1U-yVI" kind="relationship" relationship="rootViewController" id="VnE-y3-IUO"/>
+                        <segue destination="kCO-LX-9Im" kind="relationship" relationship="rootViewController" id="nOf-wq-GKX"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Fb-cx-NCu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
